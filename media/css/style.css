@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 body {
 	background: #f8d51c;
@@ -70,10 +71,13 @@ footer p {
 .image-zoom-container {
 	list-style: none;
 	font-size: 0px;
+	margin: 0 auto;
+	max-width: 1240px;
 }
 .zoom-container {
 	position: relative;
 	overflow: hidden;
+	height: 230px;
 	display: inline-block;
 	/*width: 33.33%; */
 	width: 25%;
@@ -88,8 +92,8 @@ footer p {
 .zoom-container img {
 	display: block;
 	width: 100%;
-	height: auto;
-	-webkit-transition: all .5s ease; /* Safari and Chrome */
+	height: 230px;
+	-webkit-transition: all .5s ease; 
     -moz-transition: all .5s ease; /* Firefox */
     -ms-transition: all .5s ease; /* IE 9 */
     -o-transition: all .5s ease; /* Opera */
@@ -97,13 +101,14 @@ footer p {
 }
 .zoom-container .zoom-caption {
 	position: absolute;
+	width: auto;	
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	z-index: 10;
 	background: rgba(0, 0, 0, .5);
-	-webkit-transition: all .5s ease; /* Safari and Chrome */
+	-webkit-transition: all .5s ease; 
     -moz-transition: all .5s ease; /* Firefox */
     -ms-transition: all .5s ease; /* IE 9 */
     -o-transition: all .5s ease; /* Opera */
@@ -123,7 +128,7 @@ footer p {
 	/*border-bottom: 5px solid rgba(255, 255, 255, .15);*/
 }
 .zoom-container:hover img {
-	-webkit-transform:scale(1.25); /* Safari and Chrome */
+	-webkit-transform:scale(1.25); 
     -moz-transform:scale(1.25); /* Firefox */
     -ms-transform:scale(1.25); /* IE 9 */
     -o-transform:scale(1.25); /* Opera */
