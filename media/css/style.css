@@ -59,6 +59,14 @@ header .smiley {
     top: -28px;
 }
 
+header .love {
+	width: 130px;
+    position: absolute;
+    overflow: hidden;
+    right: -22px;
+    top: -28px;
+}
+
 header h4 {
 	margin-bottom: 20px;
 }
@@ -83,21 +91,26 @@ footer p {
 	font-size: 0px;
 	margin: 0 auto;
 	max-width: 1240px;
+	text-align: center;
+	display: block;
 }
 .zoom-container {
 	position: relative;
 	overflow: hidden;
 	height: 230px;
 	display: inline-block;
+	max-width: 300px;
+	margin:20px 10px;
+	margin-bottom:0;
 	width: 33.33%; 
 	font-size: 16px;
 	font-size: 1rem;
-	border: 1px solid #fff;
 	vertical-align: top;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+
 .zoom-container img {
 	display: block;
 	width: 100%;
@@ -115,6 +128,7 @@ footer p {
 
 .zoom-container .zoom-caption {
 	position: absolute;
+	height: 230px;
 	width: auto;	
 	top: 0;
 	right: 0;
@@ -164,27 +178,34 @@ footer p {
         transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 769px) {
 	.container {
 		width: auto;
 		padding: 0 10px;
 	}
 }
 
-@media (max-width: 767px) {
-
+@media (min-width : 569px) and (max-width : 768px) { 
+	/* STYLES GO HERE */
 	.zoom-container {
 		width: 50%;
 	}
-
 }
 
-@media (max-width: 480px) {
-	
+@media (min-width : 320px) and (max-width : 568px) { 
+	/* STYLES GO HERE */
 	.zoom-container {
 		width: 100%;
 	}
-	
+	header .smiley {
+		display: none;
+	}
+	header .love {
+		display: none;
+	}
+	h1 {
+		font-size: 3em;
+	}
 }
 
 audio {
