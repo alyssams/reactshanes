@@ -23,9 +23,19 @@ hr {
 	margin: 25px 0;
 	clear: both;
 }
+
+.active {
+	visibility: visible;
+}
+
+.inactive {	
+	visibility: hidden;
+}
+
 .centered {
 	text-align: center;
 }
+
 .wrapper {
 	width: 100%;
 }
@@ -79,8 +89,7 @@ footer p {
 	overflow: hidden;
 	height: 230px;
 	display: inline-block;
-	/*width: 33.33%; */
-	width: 25%;
+	width: 33.33%; 
 	font-size: 16px;
 	font-size: 1rem;
 	border: 1px solid #fff;
@@ -99,6 +108,11 @@ footer p {
     -o-transition: all .5s ease; /* Opera */
     transition: all .5s ease;
 }
+
+.zoom-container .zoom-caption:hover {
+	background: none;
+}
+
 .zoom-container .zoom-caption {
 	position: absolute;
 	width: auto;	
@@ -114,6 +128,8 @@ footer p {
     -o-transition: all .5s ease; /* Opera */
     transition: all .5s ease;
 }
+
+
 .zoom-container .zoom-caption h3 {
 	display: block;
 	text-align: center;
@@ -127,15 +143,25 @@ footer p {
 	/*border-top: 5px solid rgba(255, 255, 255, .15);*/
 	/*border-bottom: 5px solid rgba(255, 255, 255, .15);*/
 }
-.zoom-container:hover img {
-	-webkit-transform:scale(1.25); 
-    -moz-transform:scale(1.25); /* Firefox */
-    -ms-transform:scale(1.25); /* IE 9 */
-    -o-transform:scale(1.25); /* Opera */
-     transform:scale(1.25);
+
+.zoom-container .zoom-caption:hover h3{
+	display: none;
 }
-.zoom-container:hover .zoom-caption {
-	background: none;
+
+.zoom-container img.reaction {
+	z-index: 1;
+    position: absolute;
+    top: -200px;
+    overflow: hidden;
+}
+
+.zoom-container:hover img.reaction {
+	top: 0;
+	-webkit-transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1);
+-webkit-transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition: all 400ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
 }
 
 @media (max-width: 1199px) {
