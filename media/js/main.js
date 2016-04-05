@@ -1,9 +1,11 @@
 (function($) {
 	var $window = $(window);
     var $html = $('html');
+    var $tile = $('.zoom-container');
+    var $yo = $tile.find('a');
 
     $window.resize(function resize(){
-        if ($window.width() < 768) {
+        if ($window.width() < 769) {
             $html.removeClass('no-mobile');
             return $html.addClass('mobile');
         }else {
@@ -15,30 +17,22 @@
 
 
     if($('html').hasClass('mobile')) {
-    	$('.zoom-container, .zoom-caption').removeClass('has-hover');
-    	var $yo = $('.zoom-container').find('a');
-    	$('.zoom-container a').on('click',function(e) {
+    	$yo.removeAttr('href');
+    	$yo.on('click',function(e) {
     		e.preventDefault();
-	        $(this).find('.zoom-caption').addClass('inactive');
-	        $(this).find('.reaction').addClass('active');
-	        $(this).find('audio')[0].play();
+	        $tile.find('audio')[0].play();
+	        return false;
 	    });
-	    $("a[href]").click(function() {
-		    var url = this.href;
-		    setTimeout(function () {
-		        location.href = url;
-		    }, 2000);
-		    
-		});
+	    $('.image-zoom-container').find('a').addClass('active').removeClass('inactive');
     }
 
     if($('html').hasClass('no-mobile')) {
-		$('.zoom-container a').mouseenter(function() {
+		$tile.mouseenter(function() {
 	        $(this).find('audio').removeClass('inactive');
 	        $(this).find('audio').addClass('active');
 	        $(this).find('audio')[0].play();
 	    });
-	    $('.zoom-container a').mouseout(function () {
+	    $tile.mouseout(function () {
 	        $(this).find('audio').removeClass('active');
 	        $(this).find('audio').addClass('inactive');
 	    });
